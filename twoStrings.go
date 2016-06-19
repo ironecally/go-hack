@@ -27,7 +27,7 @@ func processString() bool {
 	fmt.Scanf("%s", &str1)
 	fmt.Scanf("%s", &str2)
 
-	//can use 2 ways
+	//can use several
 
 	//1st way
 	// for i:=0; i<len(str1); i++ {
@@ -42,7 +42,16 @@ func processString() bool {
 	// return false
 
 	//2nd way
-	return strings.ContainsAny(str1,str2)
+	// return strings.ContainsAny(str1,str2)
 
-	
+	//3rd way
+	//FASTEST!, number of loop is limited to alphabet
+	for i:='a'; i<='z'; i++ {
+		if strings.Contains(str1, string(i)) && strings.Contains(str2, string(i)) {
+			return true
+		}
+	}
+	return false
+
+
 }
