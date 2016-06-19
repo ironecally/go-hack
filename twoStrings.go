@@ -1,6 +1,7 @@
 package main
 
 import(
+	"strings"
 	"fmt"
 )
 
@@ -26,14 +27,22 @@ func processString() bool {
 	fmt.Scanf("%s", &str1)
 	fmt.Scanf("%s", &str2)
 
-	for i:=0; i<len(str1); i++ {
+	//can use 2 ways
 
-		for j:=0; j<len(str2); j++ {
-			if str1[i] == str2[j] {
-				return true
-			}	
-		}
-	}
+	//1st way
+	// for i:=0; i<len(str1); i++ {
 
-	return false
+	// 	for j:=0; j<len(str2); j++ {
+	// 		if str1[i] == str2[j] {
+	// 			return true
+	// 		}	
+	// 	}
+	// }
+
+	// return false
+
+	//2nd way
+	return strings.ContainsAny(str1,str2)
+
+	
 }
